@@ -4,6 +4,7 @@
 
 export const company = {
   name: 'Racct',
+  mission: 'Organize and distribute the world\u2019s resources.',
   tagline: 'Autonomous pickup, powered by every ticket it runs.',
   subhead:
     'Consumers scan what they no longer want. Racct sells what has resale value, hauls the rest, and turns each pickup into training data for fully autonomous dispatch.',
@@ -89,6 +90,9 @@ export const howItWorks = [
 // collection layer, autonomy is what it compounds into.
 export const vision = {
   line: 'What Google did for information, Racct wants to do for resources.',
+  mission: 'Organize and distribute the world\u2019s resources.',
+  missionNote:
+    'Google stopped at organize, because information moves for free once it is indexed. Resources do not. Distribute is the second verb and the harder one: a pickup, a route, a truck, a decision about where an object should physically go. That is the half nobody has an index for, and it is the half Racct already runs every day.',
   body:
     'Google did not start by organizing the world. It started by crawling it. Racct is doing the same thing to physical goods: every pickup is a crawl of one household. What the item is, what it is worth, where it should go, what it cost to move. Nobody else is collecting that. Marketplaces see listings people bothered to write. Haulers see weight. Racct sees the item, the price, the disposition and the route, on the same record.',
   pillars: [

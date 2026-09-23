@@ -1,5 +1,6 @@
 ---
 import { company, raise } from '@/data/traction';
+const [missionHead, missionTail] = ['Organize and ', 'distribute the world\u2019s resources.'];
 ---
 
 <header class="border-b border-rule">
@@ -8,6 +9,13 @@ import { company, raise } from '@/data/traction';
       <span class="display text-xl tracking-tight sm:text-2xl">{company.name}</span>
       <span class="eyebrow">Investor brief &middot; {company.updated}</span>
     </div>
+
+    <hr class="rule my-8 sm:my-10" />
+
+    <p class="eyebrow reveal">Mission</p>
+    <p class="display reveal mt-3 text-[1.375rem] leading-tight sm:text-3xl">
+      {missionHead}<span class="text-accent">{missionTail}</span>
+    </p>
 
     <hr class="rule my-8 sm:my-10" />
 
