@@ -1,0 +1,53 @@
+---
+import { vision } from '@/data/traction';
+---
+
+<section class="border-b border-rule bg-paper-deep">
+  <div class="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
+    <p class="eyebrow">05 &middot; Vision</p>
+
+    <blockquote class="reveal mt-5 max-w-3xl">
+      <p class="display text-[2rem] leading-[1.02] sm:text-5xl lg:text-[3.5rem]">
+        What Google did for <span class="text-muted">information</span>, Racct wants to do for
+        <span class="text-accent">resources</span>.
+      </p>
+    </blockquote>
+
+    <p class="reveal mt-8 max-w-3xl text-[1.0625rem] leading-relaxed text-ink-soft sm:text-lg">
+      {vision.body}
+    </p>
+
+    <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
+      {
+        vision.pillars.map((p) => (
+          <div class="reveal border-t border-ink pt-5">
+            <span class="display text-sm text-accent">{p.n}</span>
+            <h3 class="display mt-2 text-2xl">{p.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink-soft">{p.body}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="reveal mt-12 border border-rule bg-paper p-5 sm:p-7">
+      <p class="eyebrow">What makes it credible</p>
+      <div class="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+        {
+          vision.proof.map((m) => (
+            <div>
+              <p class="display text-2xl sm:text-[1.75rem]">
+                <span class="blank">{m.value}</span>
+              </p>
+              <p class="mt-2 text-sm font-medium text-ink">{m.label}</p>
+              <p class="mt-1 text-sm leading-relaxed text-muted">{m.note}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <p class="reveal mt-10 max-w-3xl border-l-2 border-accent pl-5 text-[1.0625rem] leading-relaxed text-ink-soft sm:text-lg">
+      {vision.restraint}
+    </p>
+  </div>
+</section>

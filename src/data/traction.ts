@@ -85,6 +85,48 @@ export const howItWorks = [
   },
 ];
 
+// The vision frame Jon wants in front of thesis funds: removals is the
+// collection layer, autonomy is what it compounds into.
+export const vision = {
+  line: 'What Google did for information, Racct wants to do for resources.',
+  body:
+    'Google did not start by organizing the world. It started by crawling it. Racct is doing the same thing to physical goods: every pickup is a crawl of one household. What the item is, what it is worth, where it should go, what it cost to move. Nobody else is collecting that. Marketplaces see listings people bothered to write. Haulers see weight. Racct sees the item, the price, the disposition and the route, on the same record.',
+  pillars: [
+    {
+      n: '01',
+      title: 'Index',
+      body:
+        'Every scanned item becomes a labelled record: category, condition, resale value, and whether it sold. Removals is the collection layer, not a side business.',
+    },
+    {
+      n: '02',
+      title: 'Decide',
+      body:
+        'Sell, rehome or haul is a pricing decision made thousands of times. Each outcome grades the last call, so the decision gets sharper without a human making it.',
+    },
+    {
+      n: '03',
+      title: 'Route',
+      body:
+        'Dispatch, comms and exceptions already run through Racct. That is the loop autonomy needs, and it is the part a marketplace cannot bolt on later.',
+    },
+  ],
+  proof: [
+    {
+      value: '[% autonomous]',
+      label: 'Jobs today that touch zero humans',
+      note: 'With the monthly trend. One number beats the narrative.',
+    },
+    {
+      value: '[margin curve]',
+      label: 'Contribution margin per pickup as volume rises',
+      note: 'Autonomy is only real if the unit gets cheaper as jobs go up.',
+    },
+  ],
+  restraint:
+    'A dispatcher that knows when not to act is worth more than one that always acts. Humans stay on the edge cases by design, and that boundary is measured, not assumed.',
+};
+
 export const raise = {
   target: '$2M',
   stage: '[round stage: pre-seed / seed]',
