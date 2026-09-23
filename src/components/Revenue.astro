@@ -1,0 +1,77 @@
+---
+import { monthlyRevenue, revenueMax, revenueFacts, revenueHonesty } from '@/data/revenue';
+
+const fmt = (n: number) => '$' + n.toLocaleString('en-US');
+---
+
+<section id="revenue" class="border-b border-rule">
+  <div class="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
+    <p class="eyebrow">02 &middot; Revenue</p>
+    <h2 class="display mt-3 text-3xl sm:text-4xl">The slope, month by month</h2>
+    <p class="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+      Revenue was flat and small while removals were offline. It stepped once the removals line came
+      back in August, and held the step in September.
+    </p>
+
+    <!-- Chart -->
+    <div class="reveal mt-10 border border-rule bg-paper-deep/40 p-4 sm:p-7">
+      <div class="flex items-end gap-2 sm:gap-4" style="height: 220px;">
+        {
+          monthlyRevenue.map((m) => {
+            const pct = Math.max((m.value / revenueMax) * 100, 2.5);
+            const hot = m.value > 1000;
+            return (
+              <div class="flex h-full flex-1 flex-col justify-end">
+                <p
+                  class={`mb-1.5 text-center text-[0.6875rem] font-semibold tabular-nums sm:text-xs ${hot ? 'text-accent' : 'text-muted'}`}
+                >
+                  {fmt(m.value)}
+                </p>
+                <div
+                  class={`w-full border-t ${hot ? 'border-accent bg-accent/85' : 'border-muted bg-muted/25'}`}
+                  style={`height: ${pct}%`}
+                  title={`${m.month}: ${fmt(m.value)}`}
+                >
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+
+      <div class="mt-2 flex gap-2 border-t border-rule pt-2 sm:gap-4">
+        {
+          monthlyRevenue.map((m) => (
+            <p class="flex-1 text-center text-[0.6875rem] font-semibold uppercase tracking-wider text-muted sm:text-xs">
+              {m.short}
+              {m.partial && <span class="block font-normal normal-case tracking-normal">MTD</span>}
+            </p>
+          ))
+        }
+      </div>
+
+      <p class="mt-5 border-l-2 border-accent pl-3 text-sm leading-relaxed text-ink-soft">
+        <span class="font-semibold text-accent">August:</span> removals relaunched. Every month in red
+        is post-relaunch. September is the month in progress.
+      </p>
+    </div>
+
+    <!-- Derived facts -->
+    <dl class="mt-8 grid grid-cols-1 gap-px bg-rule sm:grid-cols-3">
+      {
+        revenueFacts.map((f) => (
+          <div class="reveal bg-paper px-5 py-6 sm:px-6">
+            <dd class="display text-4xl text-accent sm:text-5xl">{f.value}</dd>
+            <dt class="mt-3 text-sm font-semibold tracking-tight">{f.label}</dt>
+            <p class="mt-1 text-sm leading-relaxed text-muted">{f.detail}</p>
+          </div>
+        ))
+      }
+    </dl>
+
+    <p class="mt-6 max-w-3xl border border-rule bg-paper-deep/50 p-4 text-sm leading-relaxed text-ink-soft sm:p-5">
+      <span class="eyebrow block">Read it straight</span>
+      <span class="mt-2 block">{revenueHonesty}</span>
+    </p>
+  </div>
+</section>

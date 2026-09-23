@@ -20,11 +20,21 @@ export type Metric = {
 
 export const metrics: Metric[] = [
   { value: '3,000', label: 'Users', note: 'Consumer side, organic-heavy' },
-  { value: '$3.5K', label: 'Monthly revenue', note: '~$42K run-rate, growing' },
-  { value: '[MoM %]', label: 'Month-over-month growth', blank: true },
-  { value: '[GMV]', label: 'Resale GMV run-rate', blank: true },
-  { value: '[repeat %]', label: 'Repeat customers', blank: true },
+  {
+    value: '$3.5K',
+    label: 'September revenue',
+    note: 'Month in progress. August closed at $2,854.',
+  },
+  {
+    value: '5.8x',
+    label: 'July to August step',
+    note: '$493 to $2,854 when removals relaunched',
+  },
+  { value: '+23%', label: 'August to September', note: 'Second month post-relaunch' },
+  { value: '[paying customers]', label: 'Paying customers this month', blank: true },
+  { value: '[AOV]', label: 'Average order value', blank: true },
   { value: '[margin]', label: 'Contribution margin per pickup', blank: true },
+  { value: '[repeat %]', label: '180-day repeat rate', blank: true },
 ];
 
 export const marketplace = [
