@@ -20,7 +20,7 @@ export type Metric = {
 
 export const metrics: Metric[] = [
   { value: '3,000', label: 'Users', note: 'Consumer side, organic-heavy' },
-  { value: '[MRR]', label: 'Monthly revenue', note: 'Growing', blank: true },
+  { value: '$3.5K', label: 'Monthly revenue', note: '~$42K run-rate, growing' },
   { value: '[MoM %]', label: 'Month-over-month growth', blank: true },
   { value: '[GMV]', label: 'Resale GMV run-rate', blank: true },
   { value: '[repeat %]', label: 'Repeat customers', blank: true },
