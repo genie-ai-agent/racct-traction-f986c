@@ -1,0 +1,22 @@
+---
+import { momentum } from '@/data/traction';
+---
+
+<section class="border-b border-rule bg-paper-deep">
+  <div class="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
+    <p class="eyebrow">06 &middot; Momentum</p>
+    <h2 class="display mt-3 text-3xl sm:text-4xl">Right now</h2>
+
+    <div class="mt-10 grid grid-cols-1 gap-px bg-rule sm:grid-cols-3">
+      {
+        momentum.map((m) => (
+          <div class="reveal bg-paper-deep px-5 py-6 sm:px-6">
+            <p class="eyebrow">{m.label}</p>
+            <p class="display mt-3 text-2xl leading-tight">{m.value}</p>
+            <p class="mt-3 text-sm leading-relaxed text-ink-soft">{m.detail}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

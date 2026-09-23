@@ -1,0 +1,27 @@
+---
+import { backers } from '@/data/traction';
+---
+
+<section class="border-b border-rule bg-ink text-paper">
+  <div class="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
+    <p class="eyebrow" style="color: rgba(247,244,237,0.55)">04 &middot; Cap table</p>
+    <h2 class="display mt-3 text-3xl sm:text-4xl">Who is already in</h2>
+
+    <div class="mt-10 space-y-10">
+      {
+        backers.map((b) => (
+          <div class="reveal border-t border-paper/20 pt-6">
+            <h3 class="display text-3xl sm:text-4xl">{b.name}</h3>
+            <p class="mt-2 text-sm font-semibold tracking-wide text-accent-soft">{b.role}</p>
+            <p class="mt-4 max-w-2xl text-[1.0625rem] leading-relaxed text-paper/75">{b.note}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="mt-10 text-sm leading-relaxed text-paper/50">
+      Other investors on the cap table are not listed here: <span class="blank">[names cleared to
+      show publicly]</span>.
+    </p>
+  </div>
+</section>

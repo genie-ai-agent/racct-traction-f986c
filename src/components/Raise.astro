@@ -1,0 +1,51 @@
+---
+import { raise } from '@/data/traction';
+---
+
+<section class="border-b border-rule">
+  <div class="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
+    <p class="eyebrow">05 &middot; The raise</p>
+    <h2 class="display mt-3 text-3xl sm:text-4xl">What we are raising, and where it stands</h2>
+
+    <div class="mt-10 grid grid-cols-1 gap-10 md:grid-cols-[1fr_1.2fr] md:gap-14">
+      <div class="reveal">
+        <p class="display text-6xl sm:text-7xl">{raise.target}</p>
+        <p class="mt-3 text-sm font-semibold tracking-tight">
+          <span class="blank">{raise.stage}</span>
+        </p>
+        <dl class="mt-8 space-y-5 text-sm">
+          <div>
+            <dt class="font-semibold tracking-tight">Status</dt>
+            <dd class="mt-1 text-ink-soft"><span class="blank">{raise.status}</span></dd>
+          </div>
+          <div>
+            <dt class="font-semibold tracking-tight">Investor interest</dt>
+            <dd class="mt-1 text-ink-soft">{raise.conversations}</dd>
+          </div>
+          <div>
+            <dt class="font-semibold tracking-tight">Insider support</dt>
+            <dd class="mt-1 text-ink-soft">{raise.angelFollowOn}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="reveal border-t border-ink pt-6 md:border-t-0 md:border-l md:border-rule md:pl-14 md:pt-0">
+        <h3 class="eyebrow">Use of funds</h3>
+        <ul class="mt-5 space-y-4">
+          {
+            raise.useOfFunds.map((u, i) => (
+              <li class="flex gap-4 text-[1.0625rem] leading-relaxed">
+                <span class="display shrink-0 text-accent">{String(i + 1).padStart(2, '0')}</span>
+                <span class="blank">{u}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="mt-8 text-sm leading-relaxed text-muted">
+          Left blank deliberately. Allocation is the first thing a partner will press on, so it
+          should be your words, not a guess.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

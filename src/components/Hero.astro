@@ -1,0 +1,35 @@
+---
+import { company, raise } from '@/data/traction';
+---
+
+<header class="border-b border-rule">
+  <div class="mx-auto max-w-5xl px-5 pt-8 pb-14 sm:px-8 sm:pt-10 sm:pb-20">
+    <div class="flex items-center justify-between gap-4">
+      <span class="display text-xl tracking-tight sm:text-2xl">{company.name}</span>
+      <span class="eyebrow">Investor brief &middot; {company.updated}</span>
+    </div>
+
+    <hr class="rule my-8 sm:my-10" />
+
+    <p class="eyebrow reveal">Raising {raise.target}</p>
+    <h1 class="display reveal mt-4 text-[2.6rem] leading-[0.95] sm:text-6xl md:text-7xl">
+      {company.tagline}
+    </h1>
+    <p class="reveal mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-ink-soft sm:mt-8 sm:text-xl">
+      {company.subhead}
+    </p>
+
+    <div class="reveal mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 sm:mt-10">
+      <span class="inline-flex items-baseline gap-2 border border-ink px-3 py-2 text-sm font-medium">
+        <span class="h-1.5 w-1.5 shrink-0 self-center rounded-full bg-accent"></span>
+        3,000 users
+      </span>
+      <span class="inline-flex items-baseline gap-2 border border-rule bg-paper-deep px-3 py-2 text-sm font-medium text-ink-soft">
+        Both sides of the marketplace solved
+      </span>
+      <span class="inline-flex items-baseline gap-2 border border-rule bg-paper-deep px-3 py-2 text-sm font-medium text-ink-soft">
+        Venmo co-founder on the cap table
+      </span>
+    </div>
+  </div>
+</header>

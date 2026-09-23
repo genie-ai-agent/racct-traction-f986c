@@ -1,0 +1,30 @@
+---
+import { howItWorks } from '@/data/traction';
+---
+
+<section class="border-b border-rule">
+  <div class="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
+    <p class="eyebrow">03 &middot; Product</p>
+    <h2 class="display mt-3 max-w-2xl text-3xl sm:text-4xl">
+      Every ticket trains the next one
+    </h2>
+
+    <ol class="mt-10 space-y-8 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-10 sm:gap-y-10 lg:grid-cols-4">
+      {
+        howItWorks.map((s) => (
+          <li class="reveal border-t border-ink pt-5">
+            <span class="display text-sm text-accent">{s.step}</span>
+            <h3 class="display mt-2 text-2xl">{s.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink-soft">{s.body}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="reveal mt-10 max-w-3xl border-l-2 border-accent pl-5 text-[1.0625rem] leading-relaxed text-ink-soft sm:text-lg">
+      The endgame is fully autonomous dispatch and support. Pickups are the wedge because they
+      generate the exact data that automation needs: routing, exceptions, customer comms. Humans
+      handle the edges while the middle compounds.
+    </p>
+  </div>
+</section>
