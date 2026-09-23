@@ -36,21 +36,32 @@ const { title, description } = Astro.props;
       <slot />
     </div>
     <script is:inline>
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add('is-in');
-              io.unobserve(e.target);
-            }
+      (function () {
+        var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+        if (!els.length) return;
+        document.documentElement.classList.add('js-reveal');
+        els.forEach(function (el, i) {
+          el.style.transitionDelay = Math.min(i * 40, 320) + 'ms';
+        });
+        function check() {
+          var h = window.innerHeight || 800;
+          var remaining = false;
+          els.forEach(function (el) {
+            if (el.classList.contains('is-in')) return;
+            var top = el.getBoundingClientRect().top;
+            if (top < h * 0.94) el.classList.add('is-in');
+            else remaining = true;
           });
-        },
-        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-      );
-      document.querySelectorAll('.reveal').forEach((el, i) => {
-        el.style.transitionDelay = `${Math.min(i * 45, 360)}ms`;
-        io.observe(el);
-      });
+          if (!remaining) {
+            window.removeEventListener('scroll', check);
+            window.removeEventListener('resize', check);
+          }
+        }
+        window.addEventListener('scroll', check, { passive: true });
+        window.addEventListener('resize', check);
+        check();
+        setTimeout(check, 400);
+      })();
     </script>
   </body>
 </html>
